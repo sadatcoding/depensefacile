@@ -42,12 +42,13 @@
 }
 
 * { box-sizing: border-box; }
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
 body { margin: 0; min-width: 320px; background: var(--canvas); color: var(--ink); font-size: 14px; }
 button, input, select { font: inherit; }
 button, a, select { -webkit-tap-highlight-color: transparent; }
 button { color: inherit; }
 svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.app-shell { min-height: 100vh; }
+.app-shell { width: 100%; max-width: 100%; min-height: 100vh; overflow-x: hidden; }
 
 .sidebar { position: fixed; inset: 0 auto 0 0; z-index: 3; display: flex; width: 238px; flex-direction: column; padding: 31px 19px 19px; border-right: 1px solid #e8ebe4; background: #fbfcf9; }
 .brand { display: inline-flex; width: fit-content; align-items: center; gap: 10px; margin: 2px 0 58px 8px; color: var(--ink); font-family: Manrope, "Segoe UI", sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 0; text-decoration: none; }
@@ -255,7 +256,8 @@ h2 { margin: 0; font-family: Manrope, "Segoe UI", sans-serif; font-size: 15px; f
 }
 
 @media (max-width: 760px) {
-  .sidebar { position: static; width: auto; height: 56px; flex-direction: row; align-items: center; justify-content: space-between; padding: 0 17px; border-right: 0; border-bottom: 1px solid var(--line); }
+  body { min-width: 0; }
+  .sidebar { position: static; width: 100%; max-width: 100%; height: 56px; flex-direction: row; align-items: center; justify-content: space-between; padding: 0 17px; border-right: 0; border-bottom: 1px solid var(--line); }
   .brand { margin: 0; font-size: 21px; }
   .brand-name { font-size: 13px; }
   .brand-mark { height: 24px; }
@@ -263,7 +265,7 @@ h2 { margin: 0; font-family: Manrope, "Segoe UI", sans-serif; font-size: 15px; f
   .main-nav { display: flex; gap: 4px; margin: 0; }
   .nav-link { min-height: 34px; gap: 7px; padding: 0 9px; font-size: 10px; }
   .nav-link svg { width: 15px; height: 15px; }
-  .main-content { margin-left: 0; }
+  .main-content { width: 100%; max-width: 100%; margin-left: 0; overflow-x: hidden; }
   .topbar { height: 48px; padding: 0 17px; }
   .today-label { font-size: 10px; }
   .topbar-right { gap: 8px; }
